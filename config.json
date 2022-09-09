@@ -1,0 +1,14 @@
+{
+    "folders": {
+        "models": "",
+        "services": "",
+        "shared": "",
+        "home": "",
+        "store": {
+            "actions": "",
+            "reducers": "",
+            "selectors": "",
+            "effects": ""
+        }
+    }
+}

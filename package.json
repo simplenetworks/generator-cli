@@ -1,0 +1,26 @@
+{
+  "name": "code-generator",
+  "version": "1.0.0",
+  "description": "Generatore di Codice",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "npx tsc --project .",
+    "start": "tsc && node .",
+    "global": "npm install -g ."
+  },
+  "author": "Giacomo Arienti",
+  "license": "ISC",
+  "bin": {
+    "code-generator": "./build/index.js"
+  },
+  "dependencies": {
+    "yargs": "^17.5.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.7.16",
+    "@types/yargs": "^17.0.12",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  }
+}
