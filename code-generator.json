@@ -1,0 +1,14 @@
+{
+    "folders": {
+        "models": "app/commons/models/",
+        "services": "app/commons/services/backend/",
+        "shared": "app/modules/shared/",
+        "home": "app/modules/home/",
+        "store": {
+            "actions": "app/store/actions/",
+            "reducers": "app/store/effects/",
+            "selectors": "app/store/reducers/",
+            "effects": "app/store/selectors"
+        }
+    }
+}

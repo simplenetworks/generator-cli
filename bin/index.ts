@@ -1,11 +1,15 @@
 #!/usr/bin/env node
-
 import yargs from "yargs";
+import { Config } from "./config";
+import { ModelGenerator } from "./generators/model";
 
 const options = yargs(process.argv.slice(2))
     .options({
-        m: { alias: 'model', describe: "The model file name", type: "string", demandOption: true }
+        e: { alias: 'entity', describe: "The entity name", type: "string", demandOption: true }
     }).parseSync();
 
-const model = options.model;
-console.log(model);
+const entity = options.e;
+const config = new Config().config;
+
+const model = new ModelGenerator(entity, config);
+model.save();
