@@ -2,7 +2,7 @@ import { fileExists, readJson, writeFile } from "../commons/helpers/file";
 import { Config as ConfigI } from '../commons/types';
 import { default as defaultConfig } from './default.json';
 
-export class Config {
+class Config {
     fileName: string;
     configPath: string;
     config: ConfigI;
@@ -27,3 +27,5 @@ export class Config {
         return readJson<ConfigI>(this.configPath);
     }
 }
+
+export const config = new Config();

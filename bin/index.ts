@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import yargs from "yargs";
-import { Config } from "./config";
+import { config } from "./config";
+import { ActionGenerator } from "./generators/action";
 import { ModelGenerator } from "./generators/model";
 
 const options = yargs(process.argv.slice(2))
@@ -9,7 +10,9 @@ const options = yargs(process.argv.slice(2))
     }).parseSync();
 
 const entity = options.e;
-const config = new Config().config;
 
-const model = new ModelGenerator(entity, config);
-model.save();
+const model = new ModelGenerator(entity, config.config);
+model.run();
+
+const actions = new ActionGenerator(entity, config.config);
+actions.run();

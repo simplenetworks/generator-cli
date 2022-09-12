@@ -1,13 +1,10 @@
-export enum SHARED {
-    LIST = "list",
-    FILTERS = "filters",
-    FIELD = "field",
-}
-
 export enum Template {
     MODEL = "model",
     SERVICE = "service",
-    SHARED = "shared",
+    LIST = "list",
+    FILTERS = "filters",
+    FIELD = "field",
+    SELECTION = "selection",
     ACTION = "action",
     REDUCER = "reducer",
     SELECTOR = "selector",

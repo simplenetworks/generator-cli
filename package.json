@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npx tsc --project .",
     "start": "tsc && node .",
-    "global": "npm install -g ."
+    "global": "npm install -g .",
+    "clean": "rm -rf ./build/"
   },
   "author": "Giacomo Arienti",
   "license": "ISC",

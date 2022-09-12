@@ -1,5 +1,3 @@
-import { Replace } from "../types/replace";
-
 export function startCase(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }

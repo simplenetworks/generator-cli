@@ -7,31 +7,28 @@ export class BaseGenerator {
     entityName: string;
     entityFolder: string;
 
-    templateContent: string = "";
+    templateContent: string;
     templateType: Template;
     templateWriteMode: WriteMode;
 
     replacePoints: string[] = [];
     replaceFunctions: { [key: string]: Function } = {};
 
-    constructor(entityName: string, config: Config, templateType: Template, templateWriteMode: WriteMode) {
+    constructor(entityName: string, templateContent: string, templateType: Template, config: Config, templateWriteMode: WriteMode) {
         this.entityName = entityName;
-        this.entityFolder = formatPath(config.folders.models);
+        this.templateContent = templateContent;
         this.templateType = templateType;
+
+        this.entityFolder = formatPath(config.folders.models);
         this.templateWriteMode = templateWriteMode;
 
         this.init();
     }
 
-    private loadTemplate(): void {
-        const path = `templates/${this.templateType}.txt`;
-        this.templateContent = readFile(path);
-    }
-
     private replaceTemplate(): void {
-        this.templateContent = this.templateContent.replace(Replace.STRING, this.entityName);
-        this.templateContent = this.templateContent.replace(Replace.START_CASE_STRING, startCase(this.entityName));
-        this.templateContent.replace(Replace.CAPITAL_STRING, this.entityName.toUpperCase());
+        this.templateContent = this.templateContent.replaceAll(Replace.STRING, this.entityName);
+        this.templateContent = this.templateContent.replaceAll(Replace.START_CASE_STRING, startCase(this.entityName));
+        this.templateContent = this.templateContent.replaceAll(Replace.CAPITAL_STRING, this.entityName.toUpperCase());
     }
 
     private loadReplacePoints(): void {
@@ -39,20 +36,19 @@ export class BaseGenerator {
     }
 
     private init(): void {
-        this.loadTemplate();
         this.replaceTemplate();
         this.loadReplacePoints();
     }
 
     /* post init */
-
     doReplaceFunction(): void {
         for (let point of this.replacePoints) {
             if (!this.replaceFunctions.hasOwnProperty(point)) {
                 throw new Error(`Replace function: ${point} not implemented`);
             }
 
-            this.replaceFunctions.point(point);
+            this.replaceFunctions[point](point);
+            this.templateContent = this.templateContent.replaceAll(`$!${point}$!`, '');
         }
     }
 

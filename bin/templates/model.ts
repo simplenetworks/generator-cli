@@ -1,5 +1,16 @@
+export default `
 /* GENERATED CODE */
-export class Action extends Base {
+import { AbstractControl } from '@angular/forms';
+import { Base, BaseDTO } from './base.model';
+import { formatDateForBackend } from 'src/app/helpers/time.utils';
+
+export type $Replace$Filters = Partial<$Replace$DTO>;
+
+export interface $Replace$DTO extends BaseDTO {
+  $!DTO!$
+}
+
+export class $Replace$ extends Base {
   constructor(source: $Replace$DTO) {
     super(source);
     if (source) {
@@ -24,3 +35,4 @@ export class Action extends Base {
     return $replace$;
   }
 }
+`;
