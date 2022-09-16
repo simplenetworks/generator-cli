@@ -21,6 +21,8 @@ class Config {
         }
 
         writeFile(this.configPath, JSON.stringify(defaultConfig, null, 4));
+        console.log("[INFO] Config file created");
+        process.exit();
     }
 
     loadConfig(): ConfigI {

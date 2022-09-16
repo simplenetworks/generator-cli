@@ -1,14 +1,9 @@
 export interface Config {
     folders: {
-        models: string,
-        services: string,
-        shared: string,
-        home: string,
-        store: {
-            actions: string,
-            reducers: string,
-            selectors: string,
-            effects: string
-        }
-    }
+        model: string,
+        laravel_service: string,
+        component: string,
+        store: string;
+    },
+    project: string
 }

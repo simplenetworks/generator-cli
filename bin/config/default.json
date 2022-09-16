@@ -1,14 +1,9 @@
 {
     "folders": {
-        "models": "app/commons/models/",
-        "services": "app/commons/services/backend/",
-        "shared": "app/modules/shared/",
-        "home": "app/modules/home/",
-        "store": {
-            "actions": "app/store/actions/",
-            "reducers": "app/store/effects/",
-            "selectors": "app/store/reducers/",
-            "effects": "app/store/selectors"
-        }
-    }
+        "model": "src/app/commons/models",
+        "laravel_service": "src/app/commons/services/backend",
+        "component": "src/app/modules/home",
+        "store": "src/app/store"
+    },
+    "project": ""
 }
