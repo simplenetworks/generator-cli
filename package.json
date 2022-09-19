@@ -1,7 +1,7 @@
 {
-  "name": "code-generator",
-  "version": "1.0.0",
-  "description": "Generatore di Codice",
+  "name": "@simplenetworks/generator-cli",
+  "version": "1.0.1",
+  "description": "CLI for Angular schematics and Laravel",
   "main": "build/index.js",
   "scripts": {
     "build": "npx tsc --project .",
@@ -12,7 +12,7 @@
   "author": "Giacomo Arienti",
   "license": "ISC",
   "bin": {
-    "code-generator": "./build/index.js"
+    "code-generator": "build/index.js"
   },
   "dependencies": {
     "config": "^3.3.7",
@@ -23,5 +23,13 @@
     "@types/yargs": "^17.0.12",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simplenetworks/generator-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/simplenetworks/generator-cli/issues"
+  },
+  "homepage": "https://github.com/simplenetworks/generator-cli#readme"
 }
