@@ -4,6 +4,7 @@ CLI for Angular schematics and Laravel
 ### Install
 ```
 npm i -g @simplenetworks/generator-cli
+npm i @simplenetworks/simple-schematics
 ```
 
 ### Usage
